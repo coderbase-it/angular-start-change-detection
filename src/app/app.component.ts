@@ -20,8 +20,11 @@ const NumRange: [number, number] = [23, 28];
       (add)="add(rndList, $event)"
       (remove)="remove(rndList, $event)"
     ></app-employee-list>
+
+    {{ check()}}
+
   `,
-  styleUrls: ['app.component.css']
+  styleUrls: ['app.component.css'],
 })
 export class AppComponent implements OnInit {
   salesList: EmployeeData[];
@@ -43,5 +46,7 @@ export class AppComponent implements OnInit {
     list.splice(list.indexOf(node), 1);
   }
 
-  
+  check() {
+    console.log('check from AppComponent');
+  }
 }

@@ -27,6 +27,7 @@ const fibonacci = (num: number): number => {
         <mat-chip-list>
           <div class="chip">
             {{ calculate(item.num) }}
+            {{check()}}
           </div>
         </mat-chip-list>
         <i title="Delete" class="fa fa-trash-o" aria-hidden="true" (click)="remove.emit(item)"></i>
@@ -34,7 +35,7 @@ const fibonacci = (num: number): number => {
       <mat-divider *ngIf="data.length !== 0"></mat-divider>
     </mat-list>
   `,
-  styleUrls: ['employee-list.component.css']
+  styleUrls: ['employee-list.component.css'],
 })
 export class EmployeeListComponent {
   @Input() data: EmployeeData[];
@@ -54,5 +55,9 @@ export class EmployeeListComponent {
 
   calculate(num: number) {
     return fibonacci(num);
+  }
+
+  check() {
+    console.log('check from EmployeeListComponent');
   }
 }
